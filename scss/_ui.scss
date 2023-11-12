@@ -1,0 +1,85 @@
+//* COLORS
+$color-light-xl: #FFFFFF;
+$color-light-l: #F6F6F6;
+$color-light-s: #FAFAFA;
+$color-dark-s: #CDCDCD;
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-2xl: #444444;
+$color-dark-3xl: #292929;
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+//* TEXT
+@mixin h2 {
+    font-size: 44px;
+    line-height: 130%;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+@mixin h3 {
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 6%;
+    font-weight: 400;
+}
+@mixin h3-mobile {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 6%;
+    font-weight: 400;
+}
+@mixin h4 {
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 6%;
+    font-weight: 400;
+}
+@mixin h5 {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 6%;
+    font-weight: 400;
+}
+@mixin h5-modal-window {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 6%;
+    font-weight: 700;
+}
+@mixin paragraph-l {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 160%;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+@mixin paragraph-s {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: italic;
+}
+@mixin paragraph-mobile-menu {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 160%;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+@mixin logo_title {
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 1.92px;
+    font-weight: 400;
+}
+@mixin logo_subtitle {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    font-weight: 400;
+}
