@@ -4,8 +4,8 @@ import * as ReactDOMClient from 'react-dom/client';
 import App from "./App";
 
 // STYLESE
-import "./styles/main.css";
 import "./font/stylesheet.css"
+import "./styles/main.css";
 
 // INITIALIZING
 const app = ReactDOMClient.createRoot(document.getElementById("app"))

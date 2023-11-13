@@ -71,14 +71,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ----------------------------- NULL ---------------------------------- */
-@keyframes header__active {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
 body {
   font-family: "Georgia";
   font-size: 44px;
@@ -191,7 +183,7 @@ section {
   letter-spacing: 0;
   font-weight: 400;
   color: #CDCDCD;
-  transition: opacity 0.4s ease-in;
+  transition: color 0.4s ease-in;
 }
 .navigation__element:after {
   content: "";
@@ -215,7 +207,7 @@ section {
   width: 100%;
 }
 .navigation__element:hover {
-  opacity: 0.8;
+  color: #FAFAFA;
 }
 
 .friend {
@@ -285,4 +277,73 @@ section {
   max-width: 698px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 708px;
+  }
+  header {
+    padding: 0px 15px;
+  }
+  section {
+    padding: 0px 15px;
+  }
+  .friend {
+    min-height: 1165px;
+  }
+  .friend__container {
+    flex-direction: column;
+    align-items: center;
+    min-height: 1015px;
+  }
+  .friend__puppy {
+    position: relative;
+    left: 70px;
+    max-width: 569px;
+  }
+  .friend__box {
+    top: 0;
+    min-width: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    max-width: 280px;
+  }
+  header {
+    padding: 0px 10px;
+  }
+  section {
+    padding: 0px 10px;
+  }
+  .navigation {
+    display: none;
+  }
+  .friend {
+    min-height: 823px;
+  }
+  .friend__container {
+    min-height: 673px;
+  }
+  .friend__puppy {
+    left: 0;
+    max-width: 260px;
+    align-self: flex-end;
+  }
+  .friend__box {
+    align-items: center;
+    text-align: center;
+    min-height: 296px;
+  }
+  .friend__title {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 6%;
+    font-weight: 400;
+    max-width: 300px;
+  }
+  .friend__description {
+    max-width: 300px;
+  }
 }
