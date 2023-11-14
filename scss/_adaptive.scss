@@ -1,9 +1,26 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1040px) {
+    .friend {
+        &__container {
+            align-items: flex-end;
+        }
+
+        &__box {
+            align-self: flex-start;
+        }
+
+        &__puppy {
+            max-width: 450px;
+        }
+    }
+}
+
+//* TABLET
+@media screen and (max-width: 794px) {
     .container {
         max-width: 708px;
     }
-    header {
-        padding: 0px 15px;
+    .header {
+        padding: 15px;
     }
     section {
         padding: 0px 15px;
@@ -19,26 +36,68 @@
             position: relative;
             left: 70px;
             max-width: 569px;
+            @media screen and (max-width: 710px) {
+                left: 0;
+            }
         }
         &__box {
+            align-self: center;
             top: 0;
-            min-width: none;
+            min-width: auto;
         }
     }
 }
 
+@media screen and (max-width: 545px) {
+    .burger {
+        display: flex;
+        z-index: 51;
+    }
+    .navigation {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 320px;
+        height: 100%;
+        background: $color-dark-3xl;
+        padding: 0px 15px;
+        transition: right .5s ease;
+        &__element {
+            @include paragraph-mobile-menu;
+            height: auto;
+        }
+        &__container {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 243px;
+            min-height: 327px;
+        }
+        &.active {
+            right: 0;
+        }
+    }
+}
+
+
+//* MOBILE
 @media screen and (max-width: 320px) {
     .container {
-        max-width: 280px;
+        max-width: 300px;
     }
-    header {
-        padding: 0px 10px;
+    .header {
+        padding: 15px 10px;
     }
     section {
         padding: 0px 10px;
     }
-    .navigation {
-        display: none;
+    .header{
+        &__container {
+            max-width: 280px;
+        }
     }
     .friend {
         min-height: 823px;
@@ -54,6 +113,7 @@
             align-items: center;
             text-align: center;
             min-height: 296px;
+            align-self: flex-start;
         }
         &__title {
             @include h3-mobile;

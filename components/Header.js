@@ -9,6 +9,11 @@ class Header extends Component {
                 <div className='header__container container'>
                     <Logo />
                     <Navigation />
+                    <div className='burger' onClick={() => {
+                        document.querySelector("div.burger").classList.toggle("active");
+                        document.querySelector("nav.navigation").classList.toggle("active");
+                        document.querySelector("body").classList.toggle("lock");
+                    }}><span></span></div>
                 </div>
             </header>
         );

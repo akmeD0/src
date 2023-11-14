@@ -30,14 +30,16 @@ class Navigation extends Component {
     render() {
         return (
             <nav className='navigation'>
-                {this.state.List.map((el) => (
-                    <p className='navigation__element' id={"navigation"+el.id} key={el.id} onClick={(ev) => {
-                        document.querySelectorAll("p.navigation__element").forEach(element => {
-                            element.classList.remove("active");
-                        });
-                        ev.target.classList.add("active")
-                    }}>{el.text}</p>
-                ))}
+                <div className='navigation__container'>
+                    {this.state.List.map((el) => (
+                        <p className='navigation__element' id={"navigation"+el.id} key={el.id} onClick={(ev) => {
+                            document.querySelectorAll("p.navigation__element").forEach(element => {
+                                element.classList.remove("active");
+                            });
+                            ev.target.classList.add("active")
+                        }}>{el.text}</p>
+                    ))}
+                </div>
             </nav>
         );
     }
