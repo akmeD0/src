@@ -46,6 +46,20 @@
             min-width: auto;
         }
     }
+
+    .about {
+        padding-top: 80px;
+        padding-bottom: 100px;
+        min-height: 1048px;
+        &__container {
+            max-width: 430px;
+            min-height: 868px;
+            flex-direction: column-reverse;
+        }
+        &__title {
+            max-width: 370px;
+        }
+    }
 }
 
 @media screen and (max-width: 545px) {
@@ -121,6 +135,28 @@
         }
         &__description {
             max-width: 300px;
+        }
+    }
+
+    .about {
+        padding-top: 42px;
+        padding-bottom: 42px;
+        min-height: 974px;
+        &__container {
+            max-width: 300px;
+            min-height: 890px;
+            flex-direction: column-reverse;
+        }
+        &__title {
+            text-align: center;
+            width: 100%;
+            @include h3-mobile;
+        }
+        &__image {
+            max-width: 260px;
+        }
+        &__content {
+            min-height: 494px;
         }
     }
 }

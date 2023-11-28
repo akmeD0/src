@@ -216,4 +216,78 @@ section {
 }
 
 
+//* ABOUT
+.about {
+    width: 100%;
+    min-height: 588px;
+    padding: 80px 20px 100px;
+    background: $color-light-xl;
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        max-width: 850px;
+        min-height: 408px;
+    }
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 430px;
+        min-height: 380px;
+    }
+    &__title {
+        @include h3;
+        color: $color-dark-l;
+    }
+    &__text {
+        @include paragraph-l;
+        color: $color-dark-l;
+    }
+    &__image {
+        width: 100%;
+        max-width: 300px;
+        object-fit: cover;
+    }
+}
+
+//* PETS
+.pets {
+    width: 100%;
+    min-height: 877px;
+    padding: 80px 20px 100px;
+    background: $color-light-l;
+    &__container {
+        height: 100%;
+        width: 100%;
+        min-height: 697px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title {
+        text-align: center;
+        max-width: 400px;
+        @include h3;
+        color: $color-dark-l;
+    }
+    &__button {
+        width: 100%;
+        max-width: 261px;
+        min-height: 52px;
+        border-radius: 100px;
+        background: $color-primary;
+        color: $color-dark-3xl;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 1.02px;
+        font-size: 17px;
+    }
+}
+
 @import '_adaptive';
