@@ -98,6 +98,10 @@ section {
     width: 100%;
     min-height: 90px;
     padding: 15px 20px;
+    transition: background .3s ease;
+    &.active {
+        background: url('../img/noise_transparent.png'), #5B483A;
+    }
     &__container {
         display: flex;
         flex-direction: row;
@@ -126,6 +130,7 @@ section {
         @include paragraph-l;
         color: $color-dark-s;
         transition: color .4s ease-in;
+        white-space: nowrap;
         &:after {
             content: '';
                 position: relative;
@@ -287,6 +292,10 @@ section {
         line-height: 130%;
         letter-spacing: 1.02px;
         font-size: 17px;
+        transition: background .4s ease;
+        &:hover {
+            background: $color-primary-light;
+        }
     }
 }
 
