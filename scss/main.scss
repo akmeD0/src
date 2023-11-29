@@ -299,4 +299,47 @@ section {
     }
 }
 
+.slider {
+    &__container {
+        position: relative;
+        width: 100%;
+        max-width: 990px;
+        overflow: hidden;
+    }
+    &__content {
+        display: flex;
+        width: fit-content;
+        gap: 90px;
+        position: relative;
+        left: 0px;
+        transition: left .5s ease
+    }
+    &__card {
+        width: 270px;
+        min-height: 435px;
+        gap: 90px;
+    }
+}
+
+.pets {
+    &__name {
+        color: $color-dark-l;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+    }
+    &__learnMore {
+        width: 100%;
+        max-width: 187px;
+        min-height: 52px;
+        background: none;
+        border-radius: 100px;
+        border: 2px solid $color-primary;
+        color: $color-dark-3xl;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 1.02px;
+    }
+}
 @import '_adaptive';
