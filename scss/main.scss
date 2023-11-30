@@ -300,24 +300,70 @@ section {
 }
 
 .slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
     &__container {
-        position: relative;
-        width: 100%;
+        float: right;
         max-width: 990px;
+        min-height: 435px;
         overflow: hidden;
+        position: relative;
     }
     &__content {
-        display: flex;
-        width: fit-content;
-        gap: 90px;
         position: relative;
+        width: fit-content;
+        display: flex;
+        gap: 90px;
         left: 0px;
-        transition: left .5s ease
+        transition: left .5s ease;
     }
     &__card {
-        width: 270px;
+        float: left;
+        width: 100%;
+        max-width: 270px;
         min-height: 435px;
-        gap: 90px;
+        background: $color-light-s;
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        &:hover {
+            cursor: pointer;
+            .pets__learnmore {
+                background: $color-primary-light;
+                border-color: $color-primary-light;
+            }
+        }
+    }
+    &__button {
+        position: relative;
+        z-index: 2;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: none;
+        border: 2px solid $color-primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background .4s ease, border-color .4s ease, filter .4s ease;
+        &:hover {
+            border-color: $color-primary-light;
+            background: $color-primary-light;
+        }
+        &--left {
+            & img {
+                transform: rotate(180deg);
+            }
+        }
+        &:disabled {
+            filter: grayscale(1);
+        }
     }
 }
 
@@ -328,7 +374,7 @@ section {
         font-weight: 400;
         letter-spacing: 1.2px;
     }
-    &__learnMore {
+    &__learnmore {
         width: 100%;
         max-width: 187px;
         min-height: 52px;
@@ -340,6 +386,7 @@ section {
         font-weight: 400;
         line-height: 130%;
         letter-spacing: 1.02px;
+        transition: background .4s ease, border-color .4s ease;
     }
 }
 @import '_adaptive';
