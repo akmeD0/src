@@ -62,6 +62,36 @@
     }
 }
 
+@media screen and (max-width: 611px) {
+    .footer {
+        min-height: 809px;
+        &__title {
+            @include h3-mobile;
+            text-align: center;
+        }
+        &__info {
+            align-self: center;
+            &:first-child {
+                min-height: 208px;
+            }
+            &:last-child {
+                min-height: 222px;
+            }
+        }
+        &__container {
+            min-height: 779px;
+        }
+        &__box {
+            flex-direction: column;
+            min-height: 470px;
+            align-items: center;
+        }
+        &__puppy {
+            max-width: 260px;
+        }
+    }
+}
+
 @media screen and (max-width: 545px) {
     .burger {
         display: flex;
