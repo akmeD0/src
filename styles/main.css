@@ -412,6 +412,7 @@ section {
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
+  gap: 12px;
 }
 .slider__container {
   float: right;
