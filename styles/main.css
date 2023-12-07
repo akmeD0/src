@@ -441,8 +441,6 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-}
-.slider__card:hover {
   cursor: pointer;
 }
 .slider__card:hover .pets__learnmore {

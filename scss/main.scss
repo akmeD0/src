@@ -332,8 +332,8 @@ section {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        cursor: pointer;
         &:hover {
-            cursor: pointer;
             .pets__learnmore {
                 background: $color-primary-light;
                 border-color: $color-primary-light;
