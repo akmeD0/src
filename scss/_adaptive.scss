@@ -126,6 +126,33 @@
     }
 }
 
+@media screen and (max-width: 438px) {
+    .pets {
+        min-height: 791px;
+        &__container {
+            min-height: 707px;
+        }
+        &__title {
+            @include h3-mobile;
+        }
+    }
+    .slider {
+        max-width: 270px;
+        min-height: 507px;
+        flex-direction: column;
+        position: relative;
+        &__button {
+            position: absolute;
+            bottom: 0;
+            &--left {
+                left: 43px;
+            }
+            &--right {
+                right: 43px;
+            }
+        }
+    }
+}
 
 //* MOBILE
 @media screen and (max-width: 320px) {

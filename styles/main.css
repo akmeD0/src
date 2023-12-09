@@ -416,6 +416,7 @@ section {
 }
 .slider__container {
   float: right;
+  width: 100%;
   max-width: 990px;
   min-height: 435px;
   overflow: hidden;
@@ -684,6 +685,36 @@ section {
   }
   .navigation.active {
     right: 0;
+  }
+}
+@media screen and (max-width: 438px) {
+  .pets {
+    min-height: 791px;
+  }
+  .pets__container {
+    min-height: 707px;
+  }
+  .pets__title {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 6%;
+    font-weight: 400;
+  }
+  .slider {
+    max-width: 270px;
+    min-height: 507px;
+    flex-direction: column;
+    position: relative;
+  }
+  .slider__button {
+    position: absolute;
+    bottom: 0;
+  }
+  .slider__button--left {
+    left: 43px;
+  }
+  .slider__button--right {
+    right: 43px;
   }
 }
 @media screen and (max-width: 320px) {

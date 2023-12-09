@@ -8,13 +8,16 @@ class Slider extends Component {
         this.gapChanger = this.gapChanger.bind(this)
         this.arrowLeft = this.arrowLeft.bind(this)
         this.arrowRight = this.arrowRight.bind(this)
+        this.changeLeft = this.changeLeft.bind(this)
     }
     componentDidMount() {
         this.gapChanger();
         window.addEventListener("resize", this.gapChanger);
+        window.addEventListener("resize", this.changeLeft);
     }
     componentWillUnmount() {
-        window.removeEventListener("resize", this.gapChanger)
+        window.removeEventListener("resize", this.gapChanger);
+        window.removeEventListener("resize", this.changeLeft);
     }
     render() {
         return (
@@ -54,13 +57,21 @@ class Slider extends Component {
     }
     arrowLeft() {
         let arrow = document.querySelector("button.slider__button--left");
+        let container = document.querySelector("div.slider__container");
         let content = document.querySelector("div.slider__content");
         let card = document.querySelector("div.slider__card");
-        if (content.offsetLeft === 0 || content.offsetLeft <= card.offsetWidth) {
-            arrow.setAttribute("disabled", "disabled")
-        } else {
-            console.error("CODE IN PROGRESS...")
+        let amountOfCards = Math.floor(container.offsetWidth / 270);
+        let gap = parseFloat(getComputedStyle(content).gap);
+        let margin = parseFloat(getComputedStyle(card).marginLeft);
+
+        let step = amountOfCards > 1 ? card.offsetWidth + gap : card.offsetWidth + margin * 2;
+        let left = content.offsetLeft + step;
+
+        if (content.offsetLeft <= -card.offsetWidth) {
+            content.style.left = `${left}px`;
         }
+
+        content.offsetLeft >= -card.offsetWidth * 2 ? arrow.disabled = true : document.querySelector("button.slider__button--right").disabled = false;
     }
     arrowRight() {
         let arrow = document.querySelector("button.slider__button--right");
@@ -70,22 +81,31 @@ class Slider extends Component {
         let amountOfCards = Math.floor(containerWidth / 270);
         let gap = parseFloat(getComputedStyle(content).gap);
         let margin = parseFloat(getComputedStyle(card).marginLeft);
-        if (amountOfCards > 1) {
-            var limit = content.offsetWidth - (card.offsetWidth * (amountOfCards + 2) + gap * (amountOfCards - 1));
-            var step = card.offsetWidth + gap;
-        } else {
-            limit = content.offsetWidth - (card.offsetWidth + margin);
-            step = card.offsetWidth + margin * 2;
-        }
+
+        let step = amountOfCards > 1 ? card.offsetWidth + gap : card.offsetWidth + margin * 2;
+        let limit = amountOfCards > 1 ? content.offsetWidth - (card.offsetWidth * (amountOfCards + 2) + gap * (amountOfCards - 1)) : content.offsetWidth - (card.offsetWidth * 3 + margin * 2);
         let left = content.offsetLeft - step;
 
         content.style.left = `${left}px`
+        content.offsetLeft <= -limit ? arrow.disabled = true : document.querySelector("button.slider__button--left").disabled = false;
+    }
+    changeLeft() {
+        let content = document.querySelector('div.slider__content');
+        let card = document.querySelector('div.slider__card');
+        let containerWidth = document.querySelector('div.slider__container').offsetWidth;
+        let amountOfCards = Math.floor(containerWidth / 270);
+        let gap = parseFloat(getComputedStyle(content).gap);
+        let margin = parseFloat(getComputedStyle(card).marginLeft);
 
-        if (content.offsetLeft <= -limit) {
-            arrow.setAttribute("disabled", "disabled")
+        if (amountOfCards > 1) {
+            var step = card.offsetWidth + gap;
         } else {
-            document.querySelector("button.slider__button--left").removeAttribute("disabled", "disabled");
+            step = card.offsetWidth + margin * 2;
         }
+
+        let left = -step * Math.floor(content.offsetLeft / -step);
+
+        content.style.left = `${left}px`;
     }
 }
 
