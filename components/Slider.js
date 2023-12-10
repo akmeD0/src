@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import pets from '../data/pets.json'
 import arrow from '../img/Arrow.svg'
+import ModalWindow from './ModalWindow';
 
 class Slider extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            modalPet: 0
+        }
         this.gapChanger = this.gapChanger.bind(this)
         this.arrowLeft = this.arrowLeft.bind(this)
         this.arrowRight = this.arrowRight.bind(this)
@@ -26,7 +30,11 @@ class Slider extends Component {
                 <div className='slider__container'>
                     <div className='slider__content'>
                         {pets.map((el) => (
-                            <div className='slider__card' key={el.id} >
+                            <div className='slider__card' key={el.id} onClick={() => {
+                                this.setState({ modalPet: el.id })
+                                document.querySelector("div.modal").classList.add("show");
+                                document.querySelector("body").classList.add("lock");
+                            }}>
                                 <img src={el.img} alt='' className='pets__picture' />
                                 <p className='pets__name'>{el.name}</p>
                                 <button className='pets__learnmore'>Learn More</button>
@@ -35,6 +43,7 @@ class Slider extends Component {
                     </div>
                 </div>
                 <button className='slider__button slider__button--right' onClick={this.arrowRight} ><img src={arrow} alt='' /></button>
+                <ModalWindow currentPet={pets[this.state.modalPet]} />
             </div>
         );
     }

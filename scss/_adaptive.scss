@@ -60,6 +60,24 @@
             max-width: 370px;
         }
     }
+    .modal {
+        &__description {
+            font-size: 13px;
+            letter-spacing: 0.78px;
+        }
+        &__container {
+            padding-right: 10px;
+        }
+    }
+    .help {
+        min-height: 779px;
+        &__container {
+            min-height: 599px;
+        }
+        &__icons {
+            row-gap: 30px
+        }
+    }
 }
 
 @media screen and (max-width: 611px) {
@@ -88,6 +106,31 @@
         }
         &__puppy {
             max-width: 260px;
+        }
+    }
+    .modal {
+        padding: 0px 30px;
+        text-align: center;
+        &__button {
+            right: -30px;
+        }
+        &__container {
+            padding: 10px;
+            justify-content: center;
+            min-height: 341px;
+        }
+        &__info {
+            align-items: center;
+            min-height: 321px;
+        }
+        &__description {
+            text-align: left;
+        }
+        &__picture {
+            display: none;
+        }
+        &__list {
+            min-height: 87px;
         }
     }
 }
@@ -155,6 +198,25 @@
 }
 
 //* MOBILE
+@media screen and (max-width: 382px) {
+    .help {
+        min-height: 745px;
+        padding: 42px 10px;
+        &__container {
+            min-height: 661px;
+        }
+        &__title {
+            @include h3-mobile;
+        }
+        &__element {
+            min-height: 87px;
+            max-width: 130px;
+            & h4 {
+                @include h5;
+            }
+        }
+    }
+}
 @media screen and (max-width: 320px) {
     .container {
         max-width: 300px;

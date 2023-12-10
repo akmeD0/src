@@ -404,6 +404,26 @@ section {
 .pets__button:hover {
   background: #FDDCC4;
 }
+.pets__name {
+  color: #545454;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+.pets__learnmore {
+  width: 100%;
+  max-width: 187px;
+  min-height: 52px;
+  background: none;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  color: #292929;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 1.02px;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
 
 .slider {
   display: flex;
@@ -472,25 +492,197 @@ section {
   filter: grayscale(1);
 }
 
-.pets__name {
-  color: #545454;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 1.2px;
-}
-.pets__learnmore {
+.modal {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 187px;
-  min-height: 52px;
+  height: 100%;
+  display: flex;
+  padding: 0px 52px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(41, 41, 41, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+.modal__picture {
+  width: 100%;
+  max-width: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 9px;
+}
+.modal__container {
+  width: 100%;
+  max-width: 900px;
+  min-height: 500px;
+  border-radius: 9px;
+  background: #FAFAFA;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  gap: 12px;
+}
+.modal__button {
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   background: none;
-  border-radius: 100px;
   border: 2px solid #F1CDB3;
-  color: #292929;
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 130%;
-  letter-spacing: 1.02px;
   transition: background 0.4s ease, border-color 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__button:hover {
+  border-color: #FDDCC4;
+  background: #FDDCC4;
+}
+.modal__button::before {
+  content: "";
+  background: url("../img/cross.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modal__info {
+  width: 100%;
+  max-width: 351px;
+  min-height: 362px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.modal__title {
+  min-height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+}
+.modal__name {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 2.1px;
+  font-weight: 400;
+}
+.modal__kind {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+}
+.modal__description {
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.9px;
+  font-weight: 400;
+}
+.modal__list {
+  width: 100%;
+  min-height: 102px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.modal__list--item {
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.9px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.modal__list--item::before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 4px;
+  height: 4px;
+  background: #F1CDB3;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.modal__list span {
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.9px;
+  font-weight: 700;
+}
+
+.help {
+  width: 100%;
+  min-height: 611px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 100px;
+}
+.help__container {
+  min-height: 431px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.help__title {
+  text-align: center;
+  color: #545454;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 2.1px;
+  font-weight: 400;
+}
+.help__icons {
+  width: 100%;
+  max-width: 1026px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  row-gap: 55px;
+  min-height: 281px;
+}
+.help__element {
+  width: 100%;
+  max-width: 165px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 113px;
+}
+.help__element h4 {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+  color: #545454;
+  white-space: nowrap;
 }
 
 .footer {
@@ -529,7 +721,7 @@ section {
 .footer__text {
   font-size: 20px;
   line-height: 115%;
-  letter-spacing: 6%;
+  letter-spacing: 1.2px;
   font-weight: 400;
   color: #F1CDB3;
   display: flex;
@@ -617,6 +809,22 @@ section {
   .about__title {
     max-width: 370px;
   }
+  .modal__description {
+    font-size: 13px;
+    letter-spacing: 0.78px;
+  }
+  .modal__container {
+    padding-right: 10px;
+  }
+  .help {
+    min-height: 779px;
+  }
+  .help__container {
+    min-height: 599px;
+  }
+  .help__icons {
+    row-gap: 30px;
+  }
 }
 @media screen and (max-width: 611px) {
   .footer {
@@ -648,6 +856,31 @@ section {
   }
   .footer__puppy {
     max-width: 260px;
+  }
+  .modal {
+    padding: 0px 30px;
+    text-align: center;
+  }
+  .modal__button {
+    right: -30px;
+  }
+  .modal__container {
+    padding: 10px;
+    justify-content: center;
+    min-height: 341px;
+  }
+  .modal__info {
+    align-items: center;
+    min-height: 321px;
+  }
+  .modal__description {
+    text-align: left;
+  }
+  .modal__picture {
+    display: none;
+  }
+  .modal__list {
+    min-height: 87px;
   }
 }
 @media screen and (max-width: 545px) {
@@ -715,6 +948,31 @@ section {
   }
   .slider__button--right {
     right: 43px;
+  }
+}
+@media screen and (max-width: 382px) {
+  .help {
+    min-height: 745px;
+    padding: 42px 10px;
+  }
+  .help__container {
+    min-height: 661px;
+  }
+  .help__title {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 6%;
+    font-weight: 400;
+  }
+  .help__element {
+    min-height: 87px;
+    max-width: 130px;
+  }
+  .help__element h4 {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.9px;
+    font-weight: 400;
   }
 }
 @media screen and (max-width: 320px) {

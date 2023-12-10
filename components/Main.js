@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from './sections/Title';
 import About from './sections/About';
 import Pets from './sections/Pets';
+import Help from './sections/Help';
 
 class Main extends Component {
     render() {
@@ -10,6 +11,7 @@ class Main extends Component {
                 <Title />
                 <About />
                 <Pets />
+                <Help />
             </main>
         );
     }
