@@ -7,19 +7,23 @@ class Navigation extends Component {
             List: [
                 {
                     id: 0,
-                    text: "About the shelter"
+                    text: "About the shelter",
+                    link: "about"
                 },
                 {
                     id: 1,
-                    text: "Our pets"
+                    text: "Our pets",
+                    link: "pets"
                 },
                 {
                     id: 2,
-                    text: "Help the shelter"
+                    text: "Help the shelter",
+                    link: "help"
                 },
                 {
                     id: 3,
-                    text: "Contacts"
+                    text: "Contacts",
+                    link: "contacts"
                 }
             ]
         }
@@ -33,10 +37,10 @@ class Navigation extends Component {
                 <div className='navigation__container'>
                     {this.state.List.map((el) => (
                         <p className='navigation__element' id={"navigation"+el.id} key={el.id} onClick={(ev) => {
-                            document.querySelectorAll("p.navigation__element").forEach(element => {
-                                element.classList.remove("active");
-                            });
-                            ev.target.classList.add("active")
+                            window.location.href = `#${el.link}`;
+                            document.querySelector("div.burger").classList.remove("active");
+                            document.querySelector("nav.navigation").classList.remove("active");
+                            document.querySelector("body").classList.remove("lock");
                         }}>{el.text}</p>
                     ))}
                 </div>

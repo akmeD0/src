@@ -55,7 +55,7 @@ class Help extends Component {
     }
     render() {
         return (
-            <section className='help'>
+            <section className='help' id='help'>
                 <div className='help__container container'>
                     <h3 className='help__title'>How you can help<br />our shelter</h3>
                     <div className='help__icons'>

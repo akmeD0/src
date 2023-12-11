@@ -5,9 +5,17 @@ import Navigation from './Navigation';
 class Header extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            pets: 0,
+            help: 0,
+            contacts: 0
+        }
         this.headerScroll = this.headerScroll.bind(this)
     }
     componentDidMount() {
+        this.setState({ pets: document.querySelector("section.pets").getBoundingClientRect().y + window.scrollY - 150 })
+        this.setState({ help: document.querySelector("section.help").getBoundingClientRect().y + window.scrollY - 150 })
+        this.setState({ contacts: document.querySelector("section.donation").getBoundingClientRect().y + window.scrollY - 150 })
         window.addEventListener("scroll", this.headerScroll)
     }
     componentWillUnmount() {
@@ -35,6 +43,30 @@ class Header extends Component {
             document.querySelector("header.header").classList.add("active");
         } else {
             document.querySelector("header.header").classList.remove("active");
+        }
+
+
+
+        if (window.scrollY <= this.state.pets) {
+            document.querySelectorAll("p.navigation__element").forEach(element => {
+                element.classList.remove("active");
+            });
+            document.querySelector("p#navigation0").classList.add("active");
+        } else if (window.scrollY >= this.state.pets && window.scrollY <= this.state.help) {
+            document.querySelectorAll("p.navigation__element").forEach(element => {
+                element.classList.remove("active");
+            });
+            document.querySelector("p#navigation1").classList.add("active");
+        } else if (window.scrollY >= this.state.help && window.scrollY <= this.state.contacts) {
+            document.querySelectorAll("p.navigation__element").forEach(element => {
+                element.classList.remove("active");
+            });
+            document.querySelector("p#navigation2").classList.add("active");
+        } else {
+            document.querySelectorAll("p.navigation__element").forEach(element => {
+                element.classList.remove("active");
+            });
+            document.querySelector("p#navigation3").classList.add("active");
         }
     }
 }

@@ -3,7 +3,7 @@ import Slider from '../Slider';
 class Pets extends Component {
     render() {
         return (
-            <section className='pets'>
+            <section className='pets' id='pets'>
                 <div className='pets__container container'>
                     <h3 className='pets__title'>Our friends who <br/> are looking for a house</h3>
                     <Slider modalChange={this.modalChange} />

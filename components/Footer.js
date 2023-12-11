@@ -7,7 +7,7 @@ import marker from '../img/icon-marker.png'
 class Footer extends Component {
     render() {
         return (
-            <footer className='footer'>
+            <footer className='footer' id='contacts'>
                 <div className='footer__container container'>
                     <div className='footer__box'>
                         <div className='footer__info'>
